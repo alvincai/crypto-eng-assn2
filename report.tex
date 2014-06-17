@@ -11,21 +11,68 @@
 \maketitle
 %
 \begin{abstract}
-The aim of the project is to successfully run an EM side channel attack on the Lim-Lee ECC scalar multiplication algorithm implemented on a smart card. 
-\end{abstract}
+The aim of the project is to successfully run an electromagnetic side channel attack on the Lim-Lee ECC scalar multiplication algorithm implemented on a smart card. 
+\end{abstract} 
 %
 \section{Introduction}
 
+The electric current that flows through a conductor induces Electromagnetic (EM) emanations which can be used for side channel analysis. The advantage of this technique is that it (a) allows the measurement of local EM radiations from selected points on the chip \cite{Gandolfi} and (b) attacks can be mounted from a distance of several feet away \cite{cri} e.g. against mobile devices.
+
+In this paper, we attempt a practical attack on a smartcard performing ECC scalar multiplication using EM analysis. This attack targets the Lim-Lee scalar multiplication algorithm on Riscure's training card 8. In this report, we will not go into details of the Lim-Lee algorithm and associated attack, but will focus instead on the EM aspects which can be generalised to any scalar multiplication algorithm.
+
+\section{Methodology and Practical Results}
+
+In our attack, we first try to identify the specific location where cryptographic operations are carried out on the smartcard. We can then position the EM probe very close to this region so as to increase the chances of capturing data-dependent signals. The EM traces we obtained were very noisy and required signal processing to reduce noise to levels at which the data dependencies are revealed. The final step is to perform a simple side channel analysis to recover the secret key bits.
+
+\subsection{Spatial Positioning}
+
+\begin{enumerate}
+  \item how to identify 30.8MHz crypto core frequency from the power trace
+  \item how to find this point on the chip. 
+  \item How we efficiently to iteratively measure and narrow down the region.
+  \item \ldots
+\end{enumerate}
+
+
+\subsection{Signal Processing}
+
+\begin{enumerate}
+  \item Remove harmonics
+  \item Sync resample
+  \item Filter
+  \item Can also average many traces
+  \item \ldots
+\end{enumerate}
+
+
+
+\subsection{Simple Side Channel Analysis}
+
+\begin{enumerate}
+  \item just provide a brief description as anyway we did not do this completely. 
+  \item I think its more interesting to talk about how we can perform a proper attack given the limitations (i.e. can only measure short sections each time.)
+  \item \ldots
+\end{enumerate}
+
+
+
+
 \section{Conclusion}
 
-
+\begin{enumerate}
+  \item Talk about how practical?
+\end{enumerate}
 
 
 
 \begin{thebibliography}{99}
 
+\bibitem{Gandolfi}
+Gandolfi, Karine, Christophe Mourtel, and Francis Olivier. "Electromagnetic analysis: Concrete results." Cryptographic Hardware and Embedded Systems—CHES 2001. Springer Berlin Heidelberg, 2001.
+
+\bibitem{cri}
+Gary Kenworthy and Pankaj Rohatgi. "Mobile Device Security: The case for side channel resistance." Cryptography Research Inc, 2012.
 
 
 \end{thebibliography}
 \end{document}
-
