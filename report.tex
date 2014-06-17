@@ -1,7 +1,7 @@
 \documentclass{llncs}
 \usepackage{tabu}
 \usepackage{graphicx}
-
+\usepackage[utf8]{inputenc}
 
 \begin{document}
 
@@ -16,7 +16,7 @@ The aim of the project is to successfully run an electromagnetic side channel at
 %
 \section{Introduction}
 
-The electric current that flows through a conductor induces Electromagnetic (EM) emanations which can be used for side channel analysis. The advantage of this technique is that it (a) allows the measurement of local EM radiations from selected points on the chip \cite{Gandolfi} and (b) attacks can be mounted from a distance of several feet away \cite{cri} e.g. against mobile devices.
+The electric current that flows through a conductor induces Electromagnetic (EM) emanations which can be used for side channel analysis. The advantage of this technique is that it (a) allows the measurement of local EM radiations from selected points on the chip \cite{gandolfi2001} and (b) attacks can be mounted from a distance of several feet away \cite{kenworthy2012} e.g. against mobile devices.
 
 In this paper, we attempt a practical attack on a smartcard performing ECC scalar multiplication using EM analysis. This attack targets the Lim-Lee scalar multiplication algorithm on Riscure's training card 8. In this report, we will not go into details of the Lim-Lee algorithm and associated attack, but will focus instead on the EM aspects which can be generalised to any scalar multiplication algorithm.
 
@@ -63,16 +63,20 @@ In our attack, we first try to identify the specific location where cryptographi
   \item Talk about how practical?
 \end{enumerate}
 
+% Add entries in the bibliography that aren't cited:
+% \nocite{gandolfi2001}
+% \nocite{kenworthy2012}
 
-
-\begin{thebibliography}{99}
-
-\bibitem{Gandolfi}
-Gandolfi, Karine, Christophe Mourtel, and Francis Olivier. "Electromagnetic analysis: Concrete results." Cryptographic Hardware and Embedded Systems—CHES 2001. Springer Berlin Heidelberg, 2001.
-
-\bibitem{cri}
-Gary Kenworthy and Pankaj Rohatgi. "Mobile Device Security: The case for side channel resistance." Cryptography Research Inc, 2012.
-
-
-\end{thebibliography}
+\bibliographystyle{splncs03}
+\bibliography{literature}
+% \begin{thebibliography}{99}
+% 
+% \bibitem{Gandolfi}
+% Gandolfi, Karine, Christophe Mourtel, and Francis Olivier. "Electromagnetic analysis: Concrete results." Cryptographic Hardware and Embedded Systems—CHES 2001. Springer Berlin Heidelberg, 2001.
+% 
+% \bibitem{cri}
+% Gary Kenworthy and Pankaj Rohatgi. "Mobile Device Security: The case for side channel resistance." Cryptography Research Inc, 2012.
+% 
+% 
+% \end{thebibliography}
 \end{document}
