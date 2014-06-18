@@ -1,6 +1,6 @@
-\begin{enumerate}
-  \item just provide a brief description as anyway we did not do this completely. 
-  \item I think its more interesting to talk about how we can perform a proper attack given the limitations (i.e. can only measure short sections each time.)
-  \item \ldots
-\end{enumerate}
 
+The extracted pattern above is then matched to the entire trace, giving high and low correlation peaks that can be subsequently input to another Inspector module to recover the secret scalar. The problem we faced was that a high sampling rate of 1GHz was required and with a maximum limit of 48 million samples, this only enabled us to measure 48 ms out of the total 400 ms computation time.
+
+It was interesting to note that sampling at 500 MHz and below does not seem to produce sufficiently clear patterns despite these sampling frequencies still being much higher than the 30.8 MHz signal. This is likely because the information bearing signal with best signal to noise ratio was propagated by unintended emanations on a harmonic in the 1 GHz range \cite{ho2005analysis}.
+
+This limitation could be overcome by stitching together different power traces, each measured using the same input data and key, but with an appropriate delay inserted to the measurement start. We did not perform this step due to time limitations.
